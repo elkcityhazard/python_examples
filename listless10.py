@@ -16,11 +16,16 @@ print(c)
 
 # Ask the user for a number and return a list that contains only elements from
 # the original list a that are smaller than that number given by the user.
-user_number = int(input("Give me a number: "))
+try:
+    user_number = int(input("Give me a number: "))
+except ValueError:
+    print('The number you entered is not a valid entry.')
 d = [] #empty list to hold all the numbers less than the number given
 
-for num in a: # more for loops
-    if num < user_number: # check if num in a is less than the user given number
-        d.append(num) # append the numbers that are less than the user given number to a new list
-
-print(d) # print out the new list 
+try:
+    for num in a: # more for loops
+        if num < user_number: # check if num in a is less than the user given number
+            d.append(num) # append the numbers that are less than the user given number to a new list
+except NameError:
+    print('Please try again.')
+print(d) # print out the new list
