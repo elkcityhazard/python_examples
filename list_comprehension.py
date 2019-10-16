@@ -1,2 +1,5 @@
-a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+import random
+
+a = list(random.sample(range(1000), 10))
+print(a)
 print([i for i in a if i % 2 == 0])
